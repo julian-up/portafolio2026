@@ -1,466 +1,698 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de Julian Santiago Gonzalez — Full Stack Developer, Data Analyst & Network Engineer">
-  <title>Julian Santiago Gonzalez | Portafolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-  <div id="loader">
-    <div class="loader-inner">JSG</div>
-  </div>
-
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">JSG</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="nav-link">Sobre mí</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#experience" class="nav-link">Experiencia</a></li>
-        <li><a href="#projects" class="nav-link">Proyectos</a></li>
-        <li><a href="#education" class="nav-link">Formación</a></li>
-        <li><a href="#contact" class="nav-link">Contacto</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de Julian Santiago Gonzalez — Full Stack Developer, Data Analyst & Network Engineer"
+    />
+    <title>Julian Santiago Gonzalez | Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-inner">JSG</div>
     </div>
-  </nav>
 
-  <main>
-
-    <!-- HERO -->
-    <section id="hero">
-      <canvas id="bg-canvas"></canvas>
-      <div class="hero-content reveal">
-        <p class="hero-greeting">Hola, soy</p>
-        <h1 class="hero-name">
-          Julian Santiago<br>
-          <span class="hero-name-accent">Gonzalez</span>
-        </h1>
-        <p class="hero-title">Full Stack Developer &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp; Network Engineer</p>
-        <p class="hero-location">📍 Colombia &nbsp;·&nbsp; Inglés B2 &nbsp;·&nbsp; +57 321 988 3821</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-          <a href="#contact" class="btn btn-outline">Contacto</a>
-        </div>
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">JSG</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link">Sobre mí</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experiencia</a></li>
+          <li><a href="#projects" class="nav-link">Proyectos</a></li>
+          <li><a href="#education" class="nav-link">Formación</a></li>
+          <li><a href="#contact" class="nav-link">Contacto</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <div class="hero-scroll-indicator">
-        <span>scroll</span>
-        <div class="scroll-bar"></div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">Sobre mí</h2>
-        <div class="about-grid">
-          <div class="about-visual reveal">
-            <div class="avatar"><span>JSG</span></div>
-            <div class="about-facts">
-              <div class="fact">
-                <strong>2+</strong>
-                <span>Años de exp.</span>
-              </div>
-              <div class="fact">
-                <strong>B2</strong>
-                <span>Inglés</span>
-              </div>
-              <div class="fact">
-                <strong>6+</strong>
-                <span>Tecnologías</span>
-              </div>
-              <div class="fact">
-                <strong>3</strong>
-                <span>Logros clave</span>
-              </div>
-            </div>
-          </div>
-          <div class="about-text reveal">
-            <p>Ingeniero Agrónomo en formación con sólida base analítica y tecnológica, enfocado en la intersección entre <strong>ciencias de datos</strong>, análisis estadístico y gestión de información.</p>
-            <p>Mi experiencia como <strong>Analista de Redes (HFC/FTTH)</strong> y <strong>Desarrollador Full Stack</strong> me dotó de capacidad para gestionar bases de datos relacionales, comprender arquitecturas complejas de información y trabajar en entornos empresariales de alta demanda.</p>
-            <p>Complemento mis competencias con <strong>Python y R</strong> para análisis y modelado de datos, y herramientas de visualización como <strong>Power BI y Plotly</strong> para construcción de dashboards e informes estratégicos.</p>
-            <div class="about-contact-links">
-              <a href="mailto:jjuliangonzalez116@gmail.com" class="contact-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                jjuliangonzalez116@gmail.com
-              </a>
-              <a href="mailto:jgonzalezmal@unal.edu.co" class="contact-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                jgonzalezmal@unal.edu.co
-              </a>
-              <a href="tel:+573219883821" class="contact-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +57 321 988 3821
-              </a>
-            </div>
+    <main>
+      <!-- HERO -->
+      <section id="hero">
+        <canvas id="bg-canvas"></canvas>
+        <div class="hero-content reveal">
+          <p class="hero-greeting">Hola, soy</p>
+          <h1 class="hero-name">
+            Julian Santiago<br />
+            <span class="hero-name-accent">Gonzalez</span>
+          </h1>
+          <p class="hero-title">
+            Full Stack Developer &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp;
+            Network Engineer
+          </p>
+          <p class="hero-location">
+            🇨🇴 Colombia &nbsp;·&nbsp; Inglés B2 &nbsp;·&nbsp; +57 321 988 3821
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+            <a href="#contact" class="btn btn-outline">Contacto</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title reveal">Skills</h2>
-        <div class="skills-grid">
-
-          <div class="skill-card reveal">
-            <div class="skill-card-icon">⚡</div>
-            <h3>Frontend</h3>
-            <div class="skill-tags">
-              <span>JavaScript</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>React</span>
-              <span>Three.js</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
-            <div class="skill-card-icon">🔧</div>
-            <h3>Backend &amp; Bases de Datos</h3>
-            <div class="skill-tags">
-              <span>Java</span>
-              <span>Spring Boot</span>
-              <span>PHP</span>
-              <span>PostgreSQL</span>
-              <span>MongoDB</span>
-              <span>SQL</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
-            <div class="skill-card-icon">📊</div>
-            <h3>Data &amp; Analytics</h3>
-            <div class="skill-tags">
-              <span>Python</span>
-              <span>R / RStudio</span>
-              <span>Power BI</span>
-              <span>Plotly</span>
-              <span>Qgis</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
-            <div class="skill-card-icon">🌐</div>
-            <h3>Redes &amp; Infraestructura</h3>
-            <div class="skill-tags">
-              <span>HFC</span>
-              <span>FTTH</span>
-              <span>Fibra Óptica</span>
-              <span>CMTS</span>
-              <span>SIP / VoIP</span>
-              <span>DMZ · Port Forward</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
-            <div class="skill-card-icon">🛠</div>
-            <h3>Herramientas</h3>
-            <div class="skill-tags">
-              <span>Git &amp; GitHub</span>
-              <span>Postman</span>
-              <span>Agile / Scrum</span>
-              <span>REST APIs</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
-            <div class="skill-card-icon">🗣</div>
-            <h3>Idiomas</h3>
-            <div class="skill-tags">
-              <span>Español — Nativo</span>
-              <span>Inglés — B2</span>
-            </div>
-          </div>
-
+        <div class="hero-scroll-indicator">
+          <span>scroll</span>
+          <div class="scroll-bar"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">Experiencia</h2>
-        <div class="timeline">
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-meta">
-                <span class="timeline-date">Ene 2025 – Ene 2026</span>
-                <span class="timeline-badge">Reciente</span>
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Sobre mí</h2>
+          <div class="about-grid">
+            <div class="about-visual reveal">
+              <div class="avatar"><span>JSG</span></div>
+              <div class="about-facts">
+                <div class="fact">
+                  <strong>2+</strong>
+                  <span>Años de exp.</span>
+                </div>
+                <div class="fact">
+                  <strong>B2</strong>
+                  <span>Inglés</span>
+                </div>
+                <div class="fact">
+                  <strong>6+</strong>
+                  <span>Tecnologías</span>
+                </div>
+                <div class="fact">
+                  <strong>3</strong>
+                  <span>Logros clave</span>
+                </div>
               </div>
-              <h3>Analista de Soporte 2 Nivel</h3>
-              <p class="timeline-company">Claro Colombia</p>
-              <p>Soporte remoto para empresas y negocios. Resolución y configuración avanzada de fibra óptica (FO), FTTH y HFC banda ancha y telefonía troncal SIP. Diagnóstico eficiente de fallas, configuraciones especiales (DMZ, port forwarding, Bridge) y gestión de infraestructura de red mediante consola.</p>
-              <div class="timeline-tags">
-                <span>HFC/FTTH</span>
-                <span>Fibra Óptica</span>
-                <span>SIP</span>
-                <span>CMTS</span>
-                <span>Consola</span>
+            </div>
+            <div class="about-text reveal">
+              <p>
+                Ingeniero Agrónomo en formación con sólida base analítica y
+                tecnológica, enfocado en la intersección entre
+                <strong>ciencias de datos</strong>, análisis estadístico y
+                gestión de información.
+              </p>
+              <p>
+                Mi experiencia como
+                <strong>Analista de Redes (HFC/FTTH)</strong> y
+                <strong>Desarrollador Full Stack</strong> me dotó de capacidad
+                para gestionar bases de datos relacionales, comprender
+                arquitecturas complejas de información y trabajar en entornos
+                empresariales de alta demanda.
+              </p>
+              <p>
+                Complemento mis competencias con
+                <strong>Python y R</strong> para análisis y modelado de datos, y
+                herramientas de visualización como
+                <strong>Power BI y Plotly</strong> para construcción de
+                dashboards e informes estratégicos.
+              </p>
+              <div class="about-contact-links">
+                <a
+                  href="mailto:jjuliangonzalez116@gmail.com"
+                  class="contact-chip"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  jjuliangonzalez116@gmail.com
+                </a>
+                <a href="mailto:jgonzalezmal@unal.edu.co" class="contact-chip">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  jgonzalezmal@unal.edu.co
+                </a>
+                <a href="tel:+573219883821" class="contact-chip">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                  +57 321 988 3821
+                </a>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-meta">
-                <span class="timeline-date">Mar 2022 – Ene 2023</span>
-              </div>
-              <h3>Desarrollador Junior</h3>
-              <p class="timeline-company">Universidad INNCA de Colombia</p>
-              <p>Creación de librería de estilos escalables con CSS puro cumpliendo estándares de accesibilidad. Optimización de vistas en React y PHP para mejorar eficiencia y compatibilidad con el servidor.</p>
-              <div class="timeline-tags">
+      <!-- SKILLS -->
+      <section id="skills" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title reveal">Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <div class="skill-card-icon">⚡</div>
+              <h3>Frontend</h3>
+              <div class="skill-tags">
                 <span>JavaScript</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
                 <span>React</span>
+                <span>Three.js</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-card-icon">🔧</div>
+              <h3>Backend &amp; Bases de Datos</h3>
+              <div class="skill-tags">
+                <span>Java</span>
+                <span>Spring Boot</span>
                 <span>PHP</span>
-                <span>CSS</span>
-                <span>Accesibilidad</span>
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+                <span>SQL</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-card-icon">📊</div>
+              <h3>Data &amp; Analytics</h3>
+              <div class="skill-tags">
+                <span>Python</span>
+                <span>R / RStudio</span>
+                <span>Power BI</span>
+                <span>Plotly</span>
+                <span>Qgis</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-card-icon">🌐</div>
+              <h3>Redes &amp; Infraestructura</h3>
+              <div class="skill-tags">
+                <span>HFC</span>
+                <span>FTTH</span>
+                <span>Fibra Óptica</span>
+                <span>CMTS</span>
+                <span>SIP / VoIP</span>
+                <span>DMZ · Port Forward</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-card-icon">🛠</div>
+              <h3>Herramientas</h3>
+              <div class="skill-tags">
+                <span>Git &amp; GitHub</span>
+                <span>Postman</span>
+                <span>Agile / Scrum</span>
+                <span>REST APIs</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-card-icon">🗣</div>
+              <h3>Idiomas</h3>
+              <div class="skill-tags">
+                <span>Español — Nativo</span>
+                <span>Inglés — B2</span>
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section section-alt">
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Experiencia</h2>
+          <div class="timeline">
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">Ene 2025 – Ene 2026</span>
+                  <span class="timeline-badge">Reciente</span>
+                </div>
+                <h3>Analista de Soporte 2 Nivel</h3>
+                <p class="timeline-company">Claro Colombia</p>
+                <p>
+                  Soporte remoto para empresas y negocios. Resolución y
+                  configuración avanzada de fibra óptica (FO), FTTH y HFC banda
+                  ancha y telefonía troncal SIP. Diagnóstico eficiente de
+                  fallas, configuraciones especiales (DMZ, port forwarding,
+                  Bridge) y gestión de infraestructura de red mediante consola.
+                </p>
+                <div class="timeline-tags">
+                  <span>HFC/FTTH</span>
+                  <span>Fibra Óptica</span>
+                  <span>SIP</span>
+                  <span>CMTS</span>
+                  <span>Consola</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">Mar 2022 – Ene 2023</span>
+                </div>
+                <h3>Desarrollador Junior</h3>
+                <p class="timeline-company">Universidad INNCA de Colombia</p>
+                <p>
+                  Creación de librería de estilos escalables con CSS puro
+                  cumpliendo estándares de accesibilidad. Optimización de vistas
+                  en React y PHP para mejorar eficiencia y compatibilidad con el
+                  servidor.
+                </p>
+                <div class="timeline-tags">
+                  <span>JavaScript</span>
+                  <span>React</span>
+                  <span>PHP</span>
+                  <span>CSS</span>
+                  <span>Accesibilidad</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title reveal">Proyectos</h2>
+          <div class="projects-grid">
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon-wrap">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    width="22"
+                    height="22"
+                  >
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9,22 9,12 15,12 15,22" />
+                  </svg>
+                </div>
+                <a
+                  href="https://nvalencia.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link-btn"
+                  aria-label="Abrir nvalencia.vercel.app"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    width="16"
+                    height="16"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7,7 17,7 17,17" />
+                  </svg>
+                </a>
+              </div>
+              <h3>NValencia</h3>
+              <p>
+                Sitio web personal desarrollado y desplegado en Vercel. Proyecto
+                real en producción.
+              </p>
+              <div class="project-tags">
+                <span>Web</span>
+                <span>Vercel</span>
+                <span>Frontend</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon-wrap">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    width="22"
+                    height="22"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="3" y1="9" x2="21" y2="9" />
+                    <line x1="9" y1="21" x2="9" y2="9" />
+                  </svg>
+                </div>
+                <a
+                  href="https://goldbusiness.app"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link-btn"
+                  aria-label="Abrir goldbusiness.app"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    width="16"
+                    height="16"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7,7 17,7 17,17" />
+                  </svg>
+                </a>
+              </div>
+              <h3>Gold Business</h3>
+              <p>
+                Plataforma web de negocios con dominio propio en producción.
+                Aplicación funcional y escalable.
+              </p>
+              <div class="project-tags">
+                <span>Full Stack</span>
+                <span>Web App</span>
+                <span>Producción</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon-wrap">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    width="22"
+                    height="22"
+                  >
+                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" />
+                  </svg>
+                </div>
+              </div>
+              <h3>Herramienta de Tipificación</h3>
+              <p>
+                Front-end que automatiza la generación de plantillas y
+                contabilización de tiempos en soporte empresarial. Redujo
+                significativamente los tiempos de respuesta y fue reconocida con
+                una comisión por el valor aportado.
+              </p>
+              <div class="project-tags">
+                <span>JavaScript</span>
+                <span>Frontend</span>
+                <span>Automatización</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon-wrap">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    width="22"
+                    height="22"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3>Diagnóstico QoE HFC — Claro</h3>
+              <p>
+                Herramienta de diagnóstico para Quality of Experience de redes
+                HFC. Procesa comandos CMTS, genera gráficas automatizadas para
+                identificar fallas en saturación, señal y componentes, y sugiere
+                configuraciones automáticas.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>HFC/CMTS</span>
+                <span>Diagnóstico</span>
+                <span>Automatización</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon-wrap">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    width="22"
+                    height="22"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                  </svg>
+                </div>
+                <span class="project-badge">🥇 1er Lugar</span>
+              </div>
+              <h3>Migración Excel → MongoDB</h3>
+              <p>
+                Arquitectura implementada en solo <strong>5 días</strong> para
+                migrar sistemas de información desde hojas de cálculo hacia
+                NoSQL. Habilitó análisis de big data en tiempo real y generación
+                automática de insights.
+              </p>
+              <div class="project-tags">
+                <span>MongoDB</span>
+                <span>NoSQL</span>
+                <span>Big Data</span>
+                <span>Arquitectura</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Formación</h2>
+          <div class="education-grid">
+            <div class="edu-card reveal">
+              <div class="edu-icon">🎓</div>
+              <div class="edu-content">
+                <h3>Ingeniería Agronómica</h3>
+                <p class="edu-institution">Universidad Nacional de Colombia</p>
+                <span class="edu-date">2024 – Cursando</span>
+              </div>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-icon">📡</div>
+              <div class="edu-content">
+                <h3>Tecnólogo en Gestión de Redes de Datos</h3>
+                <p class="edu-institution">SENA</p>
+                <span class="edu-date">2025 – Cursando</span>
+              </div>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-icon">☕</div>
+              <div class="edu-content">
+                <h3>Bootcamp Dev Full Stack Java</h3>
+                <p class="edu-institution">Generation Colombia</p>
+                <span class="edu-date">Cursando</span>
+              </div>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-icon">📱</div>
+              <div class="edu-content">
+                <h3>Desarrollo de Aplicaciones Móviles</h3>
+                <p class="edu-institution">Universidad Nacional de Colombia</p>
+                <span class="edu-date edu-done">Culminado</span>
+              </div>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-icon">💻</div>
+              <div class="edu-content">
+                <h3>Bootcamp FullStack JavaScript</h3>
+                <p class="edu-institution">TalentoTech</p>
+                <span class="edu-date edu-done">Culminado</span>
+              </div>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-icon">🖥</div>
+              <div class="edu-content">
+                <h3>Técnico en Programación de Software</h3>
+                <p class="edu-institution">SENA</p>
+                <span class="edu-date edu-done">2021 – 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title reveal">Contacto</h2>
+          <p class="section-subtitle reveal">
+            ¿Tienes un proyecto en mente? Hablemos.
+          </p>
+          <div class="contact-grid reveal">
+            <a href="mailto:jjuliangonzalez116@gmail.com" class="contact-card">
+              <div class="contact-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <h4>Gmail</h4>
+              <p>jjuliangonzalez116@gmail.com</p>
+            </a>
+
+            <a href="mailto:jgonzalezmal@unal.edu.co" class="contact-card">
+              <div class="contact-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <h4>UNAL</h4>
+              <p>jgonzalezmal@unal.edu.co</p>
+            </a>
+
+            <a href="tel:+573219883821" class="contact-card">
+              <div class="contact-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <h4>Teléfono</h4>
+              <p>+57 321 988 3821</p>
+            </a>
+
+            <a href="#" class="contact-card" target="_blank" rel="noopener">
+              <div class="contact-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                >
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  />
+                </svg>
+              </div>
+              <h4>GitHub</h4>
+              <p>Ver repositorios</p>
+            </a>
+
+            <a href="#" class="contact-card" target="_blank" rel="noopener">
+              <div class="contact-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <h4>RPubs</h4>
+              <p>Ver análisis en R</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
       <div class="container">
-        <h2 class="section-title reveal">Proyectos</h2>
-        <div class="projects-grid">
-
-          <div class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-              </div>
-              <a href="https://nvalencia.vercel.app" target="_blank" rel="noopener" class="project-link-btn" aria-label="Abrir nvalencia.vercel.app">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
-              </a>
-            </div>
-            <h3>NValencia</h3>
-            <p>Sitio web personal desarrollado y desplegado en Vercel. Proyecto real en producción.</p>
-            <div class="project-tags">
-              <span>Web</span>
-              <span>Vercel</span>
-              <span>Frontend</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-              </div>
-              <a href="https://goldbusiness.app" target="_blank" rel="noopener" class="project-link-btn" aria-label="Abrir goldbusiness.app">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
-              </a>
-            </div>
-            <h3>Gold Business</h3>
-            <p>Plataforma web de negocios con dominio propio en producción. Aplicación funcional y escalable.</p>
-            <div class="project-tags">
-              <span>Full Stack</span>
-              <span>Web App</span>
-              <span>Producción</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
-              </div>
-            </div>
-            <h3>Herramienta de Tipificación</h3>
-            <p>Front-end que automatiza la generación de plantillas y contabilización de tiempos en soporte empresarial. Redujo significativamente los tiempos de respuesta y fue reconocida con una comisión por el valor aportado.</p>
-            <div class="project-tags">
-              <span>JavaScript</span>
-              <span>Frontend</span>
-              <span>Automatización</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-            </div>
-            <h3>Diagnóstico QoE HFC — Claro</h3>
-            <p>Herramienta de diagnóstico para Quality of Experience de redes HFC. Procesa comandos CMTS, genera gráficas automatizadas para identificar fallas en saturación, señal y componentes, y sugiere configuraciones automáticas.</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>HFC/CMTS</span>
-              <span>Diagnóstico</span>
-              <span>Automatización</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-              </div>
-              <span class="project-badge">🥇 1er Lugar</span>
-            </div>
-            <h3>Migración Excel → MongoDB</h3>
-            <p>Arquitectura implementada en solo <strong>5 días</strong> para migrar sistemas de información desde hojas de cálculo hacia NoSQL. Habilitó análisis de big data en tiempo real y generación automática de insights.</p>
-            <div class="project-tags">
-              <span>MongoDB</span>
-              <span>NoSQL</span>
-              <span>Big Data</span>
-              <span>Arquitectura</span>
-            </div>
-          </div>
-
-        </div>
+        <p>
+          © 2026 Julian Santiago Gonzalez &nbsp;·&nbsp; Diseñado y desarrollado
+          con <span style="color: var(--primary)">♥</span>
+        </p>
       </div>
-    </section>
+    </footer>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">Formación</h2>
-        <div class="education-grid">
-
-          <div class="edu-card reveal">
-            <div class="edu-icon">🎓</div>
-            <div class="edu-content">
-              <h3>Ingeniería Agronómica</h3>
-              <p class="edu-institution">Universidad Nacional de Colombia</p>
-              <span class="edu-date">2024 – Cursando</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-icon">📡</div>
-            <div class="edu-content">
-              <h3>Tecnólogo en Gestión de Redes de Datos</h3>
-              <p class="edu-institution">SENA</p>
-              <span class="edu-date">2025 – Cursando</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-icon">☕</div>
-            <div class="edu-content">
-              <h3>Bootcamp Dev Full Stack Java</h3>
-              <p class="edu-institution">Generation Colombia</p>
-              <span class="edu-date">Cursando</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-icon">📱</div>
-            <div class="edu-content">
-              <h3>Desarrollo de Aplicaciones Móviles</h3>
-              <p class="edu-institution">Universidad Nacional de Colombia</p>
-              <span class="edu-date edu-done">Culminado</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-icon">💻</div>
-            <div class="edu-content">
-              <h3>Bootcamp FullStack JavaScript</h3>
-              <p class="edu-institution">TalentoTech</p>
-              <span class="edu-date edu-done">Culminado</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-icon">🖥</div>
-            <div class="edu-content">
-              <h3>Técnico en Programación de Software</h3>
-              <p class="edu-institution">SENA</p>
-              <span class="edu-date edu-done">2021 – 2023</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title reveal">Contacto</h2>
-        <p class="section-subtitle reveal">¿Tienes un proyecto en mente? Hablemos.</p>
-        <div class="contact-grid reveal">
-
-          <a href="mailto:jjuliangonzalez116@gmail.com" class="contact-card">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <h4>Gmail</h4>
-            <p>jjuliangonzalez116@gmail.com</p>
-          </a>
-
-          <a href="mailto:jgonzalezmal@unal.edu.co" class="contact-card">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <h4>UNAL</h4>
-            <p>jgonzalezmal@unal.edu.co</p>
-          </a>
-
-          <a href="tel:+573219883821" class="contact-card">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <h4>Teléfono</h4>
-            <p>+57 321 988 3821</p>
-          </a>
-
-          <a href="#" class="contact-card" target="_blank" rel="noopener">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </div>
-            <h4>GitHub</h4>
-            <p>Ver repositorios</p>
-          </a>
-
-          <a href="#" class="contact-card" target="_blank" rel="noopener">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h4>RPubs</h4>
-            <p>Ver análisis en R</p>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Julian Santiago Gonzalez &nbsp;·&nbsp; Diseñado y desarrollado con <span style="color:var(--primary)">♥</span></p>
-    </div>
-  </footer>
-
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"
-    }
-  }
-  </script>
-  <script type="module" src="js/main.js"></script>
-</body>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
