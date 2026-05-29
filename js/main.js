@@ -59,8 +59,8 @@ class ParticleNetwork {
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
 
     const mat = new THREE.PointsMaterial({
-      color: 0x60a5fa, size: .28,
-      transparent: true, opacity: .8, sizeAttenuation: true
+      color: 0x2dd4bf, size: .28,
+      transparent: true, opacity: .75, sizeAttenuation: true
     });
 
     this.pts    = new THREE.Points(geo, mat);
@@ -92,8 +92,9 @@ class ParticleNetwork {
     const p = this.posArr.array;
     const n = this.COUNT;
     const d = this.DIST;
-    // rgb de --primary (#60a5fa)
-    const r = .376, g = .647, b = .980;
+    // blue (#60a5fa) → teal (#2dd4bf) → green (#34d399) gradient per line
+    const cA = { r: .376, g: .647, b: .980 }; // blue
+    const cB = { r: .204, g: .831, b: .749 }; // teal-green
     let idx = 0;
 
     for (let i = 0; i < n && idx < this.MAX_LINES; i++) {
@@ -104,8 +105,13 @@ class ParticleNetwork {
         const dist = Math.sqrt(dx*dx + dy*dy);
         if (dist < d) {
           const a = 1 - dist / d;
+          // interpolate color by vertical position of node i
+          const t = (p[i*3+1] + 19) / 38; // 0..1
+          const r = (cA.r + (cB.r - cA.r) * t) * a;
+          const g = (cA.g + (cB.g - cA.g) * t) * a;
+          const b = (cA.b + (cB.b - cA.b) * t) * a;
           this.lPosAttr.array.set([p[i*3], p[i*3+1], p[i*3+2], p[j*3], p[j*3+1], p[j*3+2]], idx * 6);
-          this.lColAttr.array.set([r*a, g*a, b*a, r*a, g*a, b*a], idx * 6);
+          this.lColAttr.array.set([r, g, b, r, g, b], idx * 6);
           idx++;
           conn++;
         }
