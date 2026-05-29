@@ -249,41 +249,77 @@ body::before {
 ============================= */
 .about-grid {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 4rem; align-items: start;
+  grid-template-columns: 320px 1fr;
+  gap: 5rem; align-items: start;
 }
 .about-visual {
   display: flex; flex-direction: column; align-items: center; gap: 2rem;
+  position: sticky; top: calc(var(--nav-h) + 2rem);
 }
-.avatar {
-  width: 168px; height: 168px; border-radius: 50%;
-  background: var(--grad);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--mono); font-size: 1.9rem; font-weight: 600;
-  color: #04100d; box-shadow: 0 0 60px rgba(52,211,153,.18), 0 0 30px rgba(96,165,250,.12);
+
+/* Photo */
+.avatar-wrap {
+  position: relative;
+  width: 240px; height: 240px;
   flex-shrink: 0;
 }
+.avatar-ring {
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  background: var(--grad);
+  z-index: 0;
+}
+.avatar-ring::after {
+  content: '';
+  position: absolute; inset: 3px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+.avatar-photo {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  box-shadow: 0 0 50px rgba(52,211,153,.15), 0 0 25px rgba(96,165,250,.1);
+}
+
+/* Stats grid */
 .about-facts {
   display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; width: 100%;
 }
 .fact {
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: .875rem; text-align: center;
+  border-radius: var(--radius); padding: 1rem; text-align: center;
+  transition: all var(--ease);
 }
+.fact:hover { border-color: var(--border-h); background: var(--bg-card-h); }
 .fact strong {
-  display: block; font-size: 1.4rem; font-weight: 700;
+  display: block; font-size: 1.5rem; font-weight: 700;
   background: var(--grad-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-family: var(--mono);
+  font-family: var(--mono); margin-bottom: .2rem;
 }
 .fact span { font-size: .72rem; color: var(--muted); }
 
-.about-text p { color: var(--muted); margin-bottom: 1.1rem; font-size: .93rem; }
+/* Text column */
+.about-name {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700; letter-spacing: -.02em;
+  margin-bottom: .35rem;
+}
+.about-role {
+  font-size: .85rem; color: var(--accent);
+  font-family: var(--mono); margin-bottom: 2rem;
+  letter-spacing: .02em;
+}
+.about-text p { color: var(--muted); margin-bottom: 1.25rem; font-size: .95rem; line-height: 1.8; }
 
 .about-contact-links {
-  display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem;
+  display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.75rem;
 }
 .contact-chip {
   display: inline-flex; align-items: center; gap: .4rem;
@@ -291,7 +327,7 @@ body::before {
   border: 1px solid var(--border); border-radius: 100px;
   font-size: .78rem; color: var(--muted); transition: all var(--ease);
 }
-.contact-chip:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-glow); }
+.contact-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
 
 /* =============================
    SKILLS
@@ -495,8 +531,10 @@ footer {
   .nav-toggle { display: flex; }
 
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-visual { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-  .avatar { width: 120px; height: 120px; font-size: 1.4rem; }
+  .about-visual { flex-direction: row; flex-wrap: wrap; justify-content: center; position: static; }
+  .avatar-wrap  { width: 160px; height: 160px; }
+  .about-name   { font-size: 1.4rem; }
+  .about-role   { font-size: .78rem; }
 
   .projects-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
