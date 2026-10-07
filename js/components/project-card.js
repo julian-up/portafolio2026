@@ -1,4 +1,5 @@
 import { LitElement, html, css, nothing } from '../vendor/lit-3.3.1.min.js';
+import { icon } from './app-icon.js';
 
 /**
  * <project-card name kind url repo stack badge note featured previewable>
@@ -142,6 +143,10 @@ export class ProjectCard extends LitElement {
       border-color: var(--leaf, #6ee7a8);
       color: var(--leaf, #6ee7a8);
     }
+    .action .icon {
+      width: 14px;
+      height: 14px;
+    }
     .action:focus-visible {
       outline: 2px solid var(--leaf, #6ee7a8);
       outline-offset: 3px;
@@ -201,10 +206,10 @@ export class ProjectCard extends LitElement {
                     </button>`
                   : nothing}
                 ${this.url
-                  ? html`<a class="action ghost" href=${this.url} target="_blank" rel="noopener">Visitar ↗</a>`
+                  ? html`<a class="action ghost" href=${this.url} target="_blank" rel="noopener">Visitar ${icon('arrow-up-right')}</a>`
                   : nothing}
                 ${this.repo
-                  ? html`<a class="action ghost" href=${this.repo} target="_blank" rel="noopener">Código ↗</a>`
+                  ? html`<a class="action ghost" href=${this.repo} target="_blank" rel="noopener">Código ${icon('arrow-up-right')}</a>`
                   : nothing}
               </footer>
             `

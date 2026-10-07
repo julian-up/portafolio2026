@@ -1,30 +1,31 @@
 import { LitElement, html, css } from '../vendor/lit-3.3.1.min.js';
+import { icon } from './app-icon.js';
 
 const INTENTS = [
   {
     id: 'talento',
-    icon: '🔍',
+    icon: 'search',
     label: 'Busco talento frontend',
     target: '#stack',
     reply: '¡Genial! Esto es lo que puedo aportar a tu equipo.',
   },
   {
     id: 'proyectos',
-    icon: '🚀',
+    icon: 'grid',
     label: 'Quiero ver proyectos',
     target: '#projects',
     reply: 'Vamos. Cada proyecto tiene vista previa en vivo.',
   },
   {
     id: 'propuesta',
-    icon: '💬',
+    icon: 'message',
     label: 'Tengo una propuesta',
     target: '#contact',
     reply: '¡Me encanta! Estos son los caminos más rápidos para hablar.',
   },
   {
     id: 'curiosear',
-    icon: '🌱',
+    icon: 'sprout',
     label: 'Solo vengo a curiosear',
     target: '#about',
     reply: 'Bienvenido el curioseo. Baja despacio y mira crecer la planta.',
@@ -34,7 +35,7 @@ const INTENTS = [
 /**
  * <intent-picker>
  * "¿Qué te trae por aquí?": cada opción lleva a la sección que le sirve a
- * quien visita. Emite `intent-select` con { id, target, reply }.
+ * quien visita. Emite `intent-select` con { id, target, reply, icon }.
  */
 export class IntentPicker extends LitElement {
   static properties = {
@@ -92,7 +93,9 @@ export class IntentPicker extends LitElement {
       background: rgba(110, 231, 168, 0.14);
     }
     .icon {
-      font-size: 1rem;
+      width: 17px;
+      height: 17px;
+      color: var(--leaf, #6ee7a8);
     }
   `;
 
@@ -100,7 +103,7 @@ export class IntentPicker extends LitElement {
     this.selected = intent.id;
     this.dispatchEvent(
       new CustomEvent('intent-select', {
-        detail: { id: intent.id, target: intent.target, reply: intent.reply },
+        detail: { id: intent.id, target: intent.target, reply: intent.reply, icon: intent.icon },
         bubbles: true,
         composed: true,
       }),
@@ -119,7 +122,7 @@ export class IntentPicker extends LitElement {
                 aria-pressed=${this.selected === intent.id ? 'true' : 'false'}
                 @click=${() => this._choose(intent)}
               >
-                <span class="icon" aria-hidden="true">${intent.icon}</span>${intent.label}
+                ${icon(intent.icon)}${intent.label}
               </button>
             </li>
           `,

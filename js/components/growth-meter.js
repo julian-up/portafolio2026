@@ -1,9 +1,10 @@
 import { LitElement, html, css } from '../vendor/lit-3.3.1.min.js';
+import { icon } from './app-icon.js';
 
 /**
  * <growth-meter>
  * Muestra en qué etapa va la planta del fondo y deja regarla.
- * La página le pasa `progress` (0–1), `stage`, `icon` y `hint`;
+ * La página le pasa `progress` (0–1), `stage`, `icon` (nombre de un ícono) y `hint`;
  * el botón emite `water`.
  */
 export class GrowthMeter extends LitElement {
@@ -42,7 +43,7 @@ export class GrowthMeter extends LitElement {
       align-items: center;
       gap: 0.7rem;
     }
-    .icon {
+    .stage-icon {
       display: grid;
       place-items: center;
       width: 38px;
@@ -50,7 +51,11 @@ export class GrowthMeter extends LitElement {
       flex-shrink: 0;
       border-radius: 12px;
       background: rgba(110, 231, 168, 0.1);
-      font-size: 1.2rem;
+      color: var(--leaf, #6ee7a8);
+    }
+    .stage-icon .icon {
+      width: 21px;
+      height: 21px;
     }
     .label {
       flex: 1;
@@ -102,7 +107,11 @@ export class GrowthMeter extends LitElement {
       40% { transform: translateY(3px) scale(1.25); }
     }
     .drop {
-      display: inline-block;
+      display: inline-flex;
+    }
+    .drop .icon {
+      width: 15px;
+      height: 15px;
     }
     .bar {
       height: 4px;
@@ -135,11 +144,14 @@ export class GrowthMeter extends LitElement {
         padding: 0.45rem 0.5rem 0.45rem 0.45rem;
         border-radius: 999px;
       }
-      .icon {
+      .stage-icon {
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        font-size: 1rem;
+      }
+      .stage-icon .icon {
+        width: 17px;
+        height: 17px;
       }
       .label small,
       .bar,
@@ -167,7 +179,7 @@ export class GrowthMeter extends LitElement {
     super();
     this.progress = 0;
     this.stage = 'Semilla';
-    this.icon = '🌰';
+    this.icon = 'seed';
     this.hint = '';
     this.waterings = 0;
     this._splash = false;
@@ -184,7 +196,7 @@ export class GrowthMeter extends LitElement {
     return html`
       <div class="meter">
         <div class="row">
-          <span class="icon" aria-hidden="true">${this.icon}</span>
+          <span class="stage-icon" aria-hidden="true">${icon(this.icon)}</span>
           <div class="label">
             <small>Etapa · ${pct}%</small>
             <strong aria-live="polite">${this.stage}</strong>
@@ -197,7 +209,7 @@ export class GrowthMeter extends LitElement {
             @click=${this._water}
             @animationend=${() => (this._splash = false)}
           >
-            <span class="drop" aria-hidden="true">💧</span>
+            <span class="drop" aria-hidden="true">${icon('drop')}</span>
             <span class="text">${this.waterings ? `×${this.waterings}` : 'Regar'}</span>
           </button>
         </div>

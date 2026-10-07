@@ -1,4 +1,5 @@
 import { LitElement, html, css } from '../vendor/lit-3.3.1.min.js';
+import { icon } from './app-icon.js';
 
 const VISITS_KEY = 'jsg:visitas';
 
@@ -53,21 +54,13 @@ export class GreetingLine extends LitElement {
       color: var(--text, #eef6f2);
       font-weight: 600;
     }
-    .wave {
-      display: inline-block;
-      font-size: 1.05rem;
-      transform-origin: 70% 70%;
-      animation: wave 2.4s ease-in-out 0.8s 2;
+    .icon {
+      width: 17px;
+      height: 17px;
+      color: var(--sun, #fbbf24);
     }
-    @keyframes wave {
-      0%, 60%, 100% { transform: rotate(0); }
-      10%, 30% { transform: rotate(16deg); }
-      20% { transform: rotate(-8deg); }
-      40% { transform: rotate(-4deg); }
-      50% { transform: rotate(10deg); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .wave { animation: none; }
+    .icon.moon {
+      color: var(--sky, #60a5fa);
     }
   `;
 
@@ -84,6 +77,12 @@ export class GreetingLine extends LitElement {
     return 'Buenas noches';
   }
 
+  get _icon() {
+    if (this._hour >= 5 && this._hour < 12) return 'sun';
+    if (this._hour >= 12 && this._hour < 19) return 'sunset';
+    return 'moon';
+  }
+
   get _message() {
     return this._visits > 0 ? 'qué bueno verte de nuevo' : 'te doy la bienvenida';
   }
@@ -91,7 +90,7 @@ export class GreetingLine extends LitElement {
   render() {
     return html`
       <span class="chip">
-        <span class="wave" aria-hidden="true">👋</span>
+        ${icon(this._icon, `icon ${this._icon}`)}
         <span><strong>${this._salute}</strong>, ${this._message}.</span>
       </span>
     `;

@@ -18,6 +18,7 @@ js/
 ├── main.js              arranque: scroll → etapas de la planta, navegación, interacciones
 ├── garden.js            la planta en WebGL (Three.js + shaders GLSL propios)
 ├── components/          Web Components con Lit
+│   ├── app-icon.js        íconos de línea propios (SVG), en lugar de emojis
 │   ├── greeting-line.js   saludo según la hora y si ya habías visitado
 │   ├── intent-picker.js   "¿Qué te trae por aquí?"
 │   ├── project-card.js    tarjeta de proyecto con vista previa

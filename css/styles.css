@@ -164,6 +164,15 @@ main,
   z-index: 1;
 }
 
+/* Íconos: reservan su espacio aunque el componente aún no haya cargado */
+app-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+}
+
 /* Espaciado de los componentes (las reglas del documento mandan sobre :host) */
 greeting-line {
   display: inline-flex;
@@ -216,8 +225,8 @@ intent-picker {
   color: var(--leaf);
 }
 .nav-logo-sprout {
-  font-size: 1.05rem;
-  letter-spacing: 0;
+  width: 19px;
+  height: 19px;
   transition: transform 0.4s var(--ease);
 }
 .nav-logo:hover .nav-logo-sprout {
@@ -473,6 +482,7 @@ intent-picker {
 }
 .text-link {
   display: inline-flex;
+  align-items: center;
   gap: 0.3rem;
   font-weight: 600;
   font-size: 0.9rem;
@@ -607,7 +617,8 @@ intent-picker {
   align-items: center;
   gap: 0.7rem;
 }
-.evidence-icon {
+.evidence-icon,
+.edu-icon {
   display: grid;
   place-items: center;
   width: 40px;
@@ -616,7 +627,12 @@ intent-picker {
   border-radius: 12px;
   background: rgba(110, 231, 168, 0.1);
   border: 1px solid rgba(110, 231, 168, 0.2);
-  font-size: 1.15rem;
+  color: var(--leaf);
+}
+.evidence-icon app-icon,
+.edu-icon app-icon {
+  width: 20px;
+  height: 20px;
 }
 .evidence h3 {
   font-size: 1.02rem;
@@ -831,12 +847,17 @@ project-card ul[slot='highlights'] li {
   font-size: 0.82rem;
   color: var(--text);
 }
+/* Visto dibujado con bordes: se ve igual en todos los sistemas */
 project-card ul[slot='highlights'] li::before {
-  content: '✓';
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--leaf);
-  font-weight: 700;
+  left: 0.15rem;
+  top: 0.42em;
+  width: 0.32em;
+  height: 0.6em;
+  border: solid var(--leaf);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 /* Antes de que el componente cargue */
 project-card:not(:defined) {
@@ -869,11 +890,6 @@ project-card:not(:defined) {
 }
 .edu-card:hover {
   border-color: var(--border-strong);
-}
-.edu-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-  margin-top: 0.15rem;
 }
 .edu-card h3 {
   font-size: 0.95rem;
@@ -956,9 +972,17 @@ project-card:not(:defined) {
   color: var(--dim);
 }
 .contact-place {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-top: 1.4rem;
   font-size: 0.85rem;
   color: var(--muted);
+}
+.contact-place app-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--leaf);
 }
 
 /* =============================

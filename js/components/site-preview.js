@@ -1,4 +1,5 @@
 import { LitElement, html, css, nothing } from '../vendor/lit-3.3.1.min.js';
+import { icon } from './app-icon.js';
 
 /**
  * <site-preview>
@@ -98,6 +99,9 @@ export class SitePreview extends LitElement {
       color: var(--leaf, #6ee7a8);
     }
     .open {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
       padding: 0.5rem 0.75rem;
       border-radius: 8px;
       border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
@@ -109,9 +113,22 @@ export class SitePreview extends LitElement {
       height: 34px;
       border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
       border-radius: 8px;
+      display: grid;
+      place-items: center;
       background: transparent;
       cursor: pointer;
-      font-size: 0.95rem;
+    }
+    .icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .close .icon {
+      width: 17px;
+      height: 17px;
+    }
+    .hint .icon {
+      vertical-align: -2px;
     }
     button:focus-visible,
     a:focus-visible {
@@ -251,8 +268,8 @@ export class SitePreview extends LitElement {
                     Celular
                   </button>
                 </div>
-                <a class="open" href=${this._url} target="_blank" rel="noopener">Abrir ↗</a>
-                <button class="close" type="button" aria-label="Cerrar vista previa" @click=${this.close}>✕</button>
+                <a class="open" href=${this._url} target="_blank" rel="noopener">Abrir ${icon('arrow-up-right')}</a>
+                <button class="close" type="button" aria-label="Cerrar vista previa" @click=${this.close}>${icon('close')}</button>
               </div>
               <div class="stage ${this._device}">
                 ${this._loaded
@@ -268,7 +285,7 @@ export class SitePreview extends LitElement {
               </div>
               <p class="hint">
                 ¿No carga? Algunos sitios no se dejan mostrar dentro de otro.
-                <a href=${this._url} target="_blank" rel="noopener">Ábrelo en una pestaña nueva ↗</a>
+                <a href=${this._url} target="_blank" rel="noopener">Ábrelo en una pestaña nueva ${icon('arrow-up-right')}</a>
               </p>
             `
           : nothing}

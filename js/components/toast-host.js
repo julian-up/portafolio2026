@@ -1,8 +1,9 @@
 import { LitElement, html, css, repeat } from '../vendor/lit-3.3.1.min.js';
+import { icon } from './app-icon.js';
 
 /**
  * <toast-host>
- * Mensajes cortos y amables: `show('¡Copiado!', { icon: '✅' })`.
+ * Mensajes cortos y amables: `show('¡Copiado!', { icon: 'mail' })`.
  */
 export class ToastHost extends LitElement {
   static properties = {
@@ -45,7 +46,10 @@ export class ToastHost extends LitElement {
       animation: leave 0.3s ease forwards;
     }
     .icon {
-      font-size: 1.1rem;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--leaf, #6ee7a8);
     }
     @keyframes enter {
       from { opacity: 0; transform: translateY(12px) scale(0.97); }
@@ -74,9 +78,9 @@ export class ToastHost extends LitElement {
     this._nextId = 1;
   }
 
-  show(message, { icon = '🌱', timeout = 3600 } = {}) {
+  show(message, { icon: nombre = 'sprout', timeout = 3600 } = {}) {
     const id = this._nextId++;
-    this._toasts = [...this._toasts, { id, message, icon, leaving: false }].slice(-3);
+    this._toasts = [...this._toasts, { id, message, icon: nombre, leaving: false }].slice(-3);
     setTimeout(() => this._dismiss(id), timeout);
   }
 
@@ -93,7 +97,7 @@ export class ToastHost extends LitElement {
           (t) => t.id,
           (t) => html`
             <div class="toast ${t.leaving ? 'leaving' : ''}">
-              <span class="icon" aria-hidden="true">${t.icon}</span>${t.message}
+              ${icon(t.icon)}${t.message}
             </div>
           `,
         )}

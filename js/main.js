@@ -1,3 +1,4 @@
+import './components/app-icon.js';
 import './components/greeting-line.js';
 import './components/intent-picker.js';
 import './components/count-up.js';
@@ -23,12 +24,12 @@ const ANCHORS = [
 ];
 
 const STAGES = [
-  { until: 0.05, icon: '🌰', name: 'Semilla', hint: 'Una idea esperando agua. Baja para que germine.' },
-  { until: 0.3, icon: '🫘', name: 'Germinación', hint: 'Primero la raíz: sin bases firmes no crece nada.' },
-  { until: 0.47, icon: '🌱', name: 'Emergencia', hint: 'Rompe el suelo y abre sus cotiledones.' },
-  { until: 0.86, icon: '🌿', name: 'Crecimiento', hint: 'Hoja por hoja, como cada proyecto. Mueve el cursor: la planta busca la luz.' },
-  { until: 0.97, icon: '🌷', name: 'Botón floral', hint: 'Casi listo para florecer.' },
-  { until: Infinity, icon: '🌸', name: 'Floración', hint: '¡Llegaste al final! Hablemos y hagamos crecer algo juntos.' },
+  { until: 0.05, icon: 'seed', name: 'Semilla', hint: 'Una idea esperando agua. Baja para que germine.' },
+  { until: 0.3, icon: 'germination', name: 'Germinación', hint: 'Primero la raíz: sin bases firmes no crece nada.' },
+  { until: 0.47, icon: 'sprout', name: 'Emergencia', hint: 'Rompe el suelo y abre sus cotiledones.' },
+  { until: 0.86, icon: 'leaves', name: 'Crecimiento', hint: 'Hoja por hoja, como cada proyecto. Mueve el cursor: la planta busca la luz.' },
+  { until: 0.97, icon: 'bud', name: 'Botón floral', hint: 'Casi listo para florecer.' },
+  { until: Infinity, icon: 'flower', name: 'Floración', hint: '¡Llegaste al final! Hablemos y hagamos crecer algo juntos.' },
 ];
 
 function stageFor(p) {
@@ -212,8 +213,8 @@ function initInteractions() {
 
   // "¿Qué te trae por aquí?"
   document.addEventListener('intent-select', (event) => {
-    const { target, reply } = event.detail;
-    toasts.show(reply, { icon: '👋' });
+    const { target, reply, icon } = event.detail;
+    toasts.show(reply, { icon });
     setTimeout(() => document.querySelector(target)?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' }), 350);
   });
 
@@ -238,11 +239,11 @@ function initInteractions() {
     }
     garden?.water();
     if (!garden) {
-      toasts.show('Tu navegador no puede mostrar la planta, pero igual te agradece el agua.', { icon: '💧' });
+      toasts.show('Tu navegador no puede mostrar la planta, pero igual te agradece el agua.', { icon: 'drop' });
     } else if (waterings === 1) {
-      toasts.show('¡Gracias por regarla! Mira cómo se alegra.', { icon: '💧' });
+      toasts.show('¡Gracias por regarla! Mira cómo se alegra.', { icon: 'drop' });
     } else if (waterings % 5 === 0) {
-      toasts.show(`Ya la has regado ${waterings} veces. Con este cuidado, hasta florece antes.`, { icon: '💧' });
+      toasts.show(`Ya la has regado ${waterings} veces. Con este cuidado, hasta florece antes.`, { icon: 'drop' });
     }
   });
 
@@ -266,7 +267,7 @@ function initInteractions() {
       const text = button.dataset.copy;
       try {
         await navigator.clipboard.writeText(text);
-        toasts.show(`Copiado: ${text}. ¡Te respondo pronto!`, { icon: '✉️' });
+        toasts.show(`Copiado: ${text}. ¡Te respondo pronto!`, { icon: 'mail' });
       } catch {
         window.location.href = `mailto:${text}`;
       }
