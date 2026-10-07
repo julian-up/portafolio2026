@@ -17,6 +17,11 @@ export class GrowthMeter extends LitElement {
   };
 
   static styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     :host {
       position: fixed;
       right: 1rem;

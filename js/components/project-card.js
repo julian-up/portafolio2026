@@ -23,6 +23,11 @@ export class ProjectCard extends LitElement {
   };
 
   static styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     :host {
       display: block;
       --spot-x: 50%;
@@ -81,15 +86,13 @@ export class ProjectCard extends LitElement {
       font: 600 1.35rem/1.2 var(--serif, Georgia, serif);
       color: var(--text, #eef6f2);
     }
-    .desc {
-      flex: 1;
-    }
+    /* Tecnologías y botones van al fondo: así se alinean entre tarjetas */
     .stack {
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
-      margin: 0.2rem 0 0;
-      padding: 0;
+      margin: auto 0 0;
+      padding: 0.2rem 0 0;
       list-style: none;
     }
     .stack li {

@@ -14,6 +14,11 @@ export class SitePreview extends LitElement {
   };
 
   static styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     dialog {
       width: min(1180px, 94vw);
       height: min(820px, 90vh);

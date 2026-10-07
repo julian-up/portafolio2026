@@ -29,6 +29,11 @@ export class GreetingLine extends LitElement {
   };
 
   static styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     :host {
       display: inline-flex;
     }

@@ -42,6 +42,11 @@ export class IntentPicker extends LitElement {
   };
 
   static styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     :host {
       display: block;
     }

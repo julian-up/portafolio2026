@@ -10,6 +10,11 @@ export class ToastHost extends LitElement {
   };
 
   static styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     :host {
       position: fixed;
       top: calc(var(--nav-h, 68px) + 0.75rem);
