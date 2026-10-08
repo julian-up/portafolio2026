@@ -730,6 +730,45 @@ intent-picker {
   color: var(--muted);
 }
 
+/* Aportes en palabras sencillas (primero) */
+.aportes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+.aporte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  transition: border-color 0.3s;
+}
+.aporte:hover {
+  border-color: var(--border-strong);
+}
+.aporte h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.aporte p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.subsection-title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
 /* =============================
    EXPERIENCIA
 ============================= */
@@ -1065,6 +1104,7 @@ project-card:not(:defined) {
    RESPONSIVE
 ============================= */
 @media (max-width: 1100px) {
+  .aportes-grid,
   .evidence-grid,
   .projects-grid,
   .education-grid {
@@ -1163,6 +1203,7 @@ project-card:not(:defined) {
   .footer {
     padding-top: 58vh;
   }
+  .aportes-grid,
   .evidence-grid,
   .projects-grid,
   .education-grid,

@@ -8,7 +8,7 @@
  *   dispersa con el viento, mientras un canvas dibuja los granos que se van.
  *   Al soltar, los granos regresan y la tarjeta se arma de nuevo.
  */
-const SELECTOR = 'project-card, .evidence, .edu-card, .timeline-card';
+const SELECTOR = 'project-card, .aporte, .evidence, .edu-card, .timeline-card';
 const INTERACTIVOS = 'a, button, input, select, textarea, summary, [role="button"]';
 const ESPERA_TEMBLOR = 280; // ms presionando antes de temblar
 const ESPERA_ARENA = 650; // ms presionando antes de deshacerse
