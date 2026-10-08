@@ -126,13 +126,16 @@ export class ProjectCard extends LitElement {
       cursor: pointer;
       transition: background 0.25s, color 0.25s, border-color 0.25s;
     }
+    /* Verde oliva; al pasar el cursor, fondo blanco suave y letras blancas */
     .primary {
-      border: 1px solid transparent;
-      background: var(--grad, linear-gradient(135deg, #60a5fa, #34d399));
-      color: #04130e;
+      border: 1px solid #8a9a3a;
+      background: #8a9a3a;
+      color: #141c06;
     }
     .primary:hover {
-      filter: brightness(1.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
     }
     .ghost {
       border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
