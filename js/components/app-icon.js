@@ -7,7 +7,7 @@ import { LitElement, html, css, svg, nothing } from '../vendor/lit-3.3.1.min.js'
  */
 export const ICONS = {
   // Etapas de la planta
-  seed: svg`<ellipse cx="12" cy="12" rx="6" ry="7.8" transform="rotate(-28 12 12)"/><path d="M9.3 6.8c2 1.7 2.2 3.7 2.5 5.3.3 1.7 1 3.4 2.9 5"/>`,
+  seed: svg`<ellipse cx="12" cy="12" rx="6" ry="7.8" transform="rotate(-28 12 12)"/><path d="M10.9 8.7c1.1 1 1.2 2.1 1.1 3.2-.1 1.1.2 2.3 1.2 3.4"/>`,
   germination: svg`<ellipse cx="12" cy="8" rx="5.5" ry="4.5"/><path d="M12 12.5v3.2c0 2.2-1.4 3.7-3.5 4.8"/><path d="M12 16.4c.9 1.4 2.3 2.2 4 2.4"/>`,
   sprout: svg`<path d="M12 20v-8"/><path d="M12 12C12 8.6 9.6 6.2 5 6.2c0 3.9 2.5 5.8 7 5.8z"/><path d="M12 12c0-3.4 2.4-5.8 7-5.8 0 3.9-2.5 5.8-7 5.8z"/><path d="M7 20h10"/>`,
   leaves: svg`<path d="M12 21V7.5"/><path d="M12 14c-1.4-2.6-4-3.7-7.2-3.2.6 3.1 3.2 4.4 7.2 3.2z"/><path d="M12 10c1.4-2.6 4-3.7 7.2-3.2-.6 3.1-3.2 4.4-7.2 3.2z"/><path d="M12 7.5c0-2 .8-3.6 2.3-4.8"/><path d="M8 21h8"/>`,

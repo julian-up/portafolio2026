@@ -611,7 +611,7 @@ intent-picker {
 .evidence-wide .evidence-head { grid-area: head; }
 .evidence-wide > p { grid-area: text; }
 .evidence-wide .code-peek { grid-area: code; }
-.evidence-wide .text-link { grid-area: link; justify-self: start; }
+.evidence-wide .text-link { grid-area: link; justify-self: start; align-self: flex-start; }
 .evidence-head {
   display: flex;
   align-items: center;

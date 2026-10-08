@@ -128,6 +128,7 @@ export class SitePreview extends LitElement {
       height: 17px;
     }
     .hint .icon {
+      margin-left: 0.25em;
       vertical-align: -2px;
     }
     button:focus-visible,
@@ -285,7 +286,7 @@ export class SitePreview extends LitElement {
               </div>
               <p class="hint">
                 ¿No carga? Algunos sitios no se dejan mostrar dentro de otro.
-                <a href=${this._url} target="_blank" rel="noopener">Ábrelo en una pestaña nueva ${icon('arrow-up-right')}</a>
+                <a href=${this._url} target="_blank" rel="noopener">Ábrelo en una pestaña nueva${icon('arrow-up-right')}</a>
               </p>
             `
           : nothing}

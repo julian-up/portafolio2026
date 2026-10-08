@@ -117,6 +117,8 @@ function initScroll() {
     document.documentElement.style.setProperty('--bloom', String(Math.max(0, (p - 0.86) / 0.14)));
 
     navbar.classList.toggle('scrolled', window.scrollY > 20);
+    // En celular el medidor espera a que empieces a bajar para no tapar el inicio.
+    meter.toggleAttribute('dormido', window.scrollY < 120);
     const probe = window.scrollY + window.innerHeight * 0.35;
     let current = null;
     sections.forEach((section) => {

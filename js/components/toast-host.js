@@ -27,6 +27,12 @@ export class ToastHost extends LitElement {
       gap: 0.5rem;
       pointer-events: none;
     }
+    [role='status'] {
+      display: flex;
+      flex-direction: column;
+      align-items: inherit;
+      gap: 0.5rem;
+    }
     .toast {
       display: flex;
       align-items: center;

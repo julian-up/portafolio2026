@@ -133,7 +133,15 @@ export class GrowthMeter extends LitElement {
       font: 400 0.74rem/1.45 var(--font, system-ui);
       color: var(--muted, #9fb3ad);
     }
+    :host {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
     @media (max-width: 720px) {
+      :host([dormido]) {
+        opacity: 0;
+        transform: translateY(12px);
+        pointer-events: none;
+      }
       :host {
         left: 0.75rem;
         right: auto;
