@@ -383,13 +383,16 @@ customElements.<span class="tk-f">define</span>(<span class="tk-s">'project-card
           <p class="eyebrow reveal">Proyectos</p>
           <h2 class="section-title reveal">Lo que he cultivado</h2>
           <p class="section-lead reveal">
-            Abre la <strong>vista previa</strong> para recorrer cada sitio en vivo sin salir de aquí.
+            En producción, para clientes, académicos y en equipo. Los que están en línea tienen
+            <strong>vista previa</strong> para recorrerlos sin salir de aquí.
           </p>
 
           <div class="filters reveal" role="group" aria-label="Filtrar proyectos">
             <button class="filter" data-filter="all" aria-pressed="true">Todos</button>
             <button class="filter" data-filter="frontend" aria-pressed="false">Frontend</button>
             <button class="filter" data-filter="fullstack" aria-pressed="false">Full Stack</button>
+            <button class="filter" data-filter="movil" aria-pressed="false">Móvil</button>
+            <button class="filter" data-filter="datos" aria-pressed="false">Ciencia y datos</button>
             <button class="filter" data-filter="automatizacion" aria-pressed="false">Automatización y redes</button>
           </div>
 
@@ -459,6 +462,21 @@ customElements.<span class="tk-f">define</span>(<span class="tk-s">'project-card
 
             <project-card
               class="reveal"
+              name="Restaurant POS"
+              kind="Punto de venta · Plantilla"
+              repo="https://github.com/julian-up/restaurant-pos-template"
+              stack="Java 21, Spring Boot, PostgreSQL, React, Vite"
+              data-category="fullstack"
+            >
+              <p>
+                Punto de venta para restaurantes: mesas, pedidos, productos e inventario, caja, facturación
+                e impresión, con usuarios y autenticación. API en Spring Boot con PostgreSQL, interfaz en
+                React + Vite, y se empaqueta como ejecutable para Windows.
+              </p>
+            </project-card>
+
+            <project-card
+              class="reveal"
               previewable
               name="NOC Toolkit — HFC y FTTO/GPON"
               kind="Herramienta de diagnóstico"
@@ -470,6 +488,78 @@ customElements.<span class="tk-f">define</span>(<span class="tk-s">'project-card
               <p>
                 Genera comandos para 8 tipos de OLT (Huawei, ZTE, Alcatel, Nokia) y 11 modelos de CPE,
                 analiza salidas del CMTS, registra potencias ópticas y grafica tendencias históricas.
+              </p>
+            </project-card>
+
+            <project-card
+              class="reveal"
+              name="Simulador de hemostasia"
+              kind="Simulador educativo"
+              repo="https://github.com/julian-up/Simulador_hemostasia"
+              stack="HTML, CSS, JavaScript"
+              data-category="frontend datos"
+            >
+              <p>
+                Simulador interactivo de la hemostasia completa: vasoconstricción, tapón plaquetario,
+                cascada de coagulación con sus factores, formación de fibrina y fibrinólisis.
+              </p>
+            </project-card>
+
+            <project-card
+              class="reveal"
+              name="Simulador de flujo arterial"
+              kind="Simulación · Ciencia de datos"
+              repo="https://github.com/julian-up/Arteriosclerosis"
+              stack="Python, Streamlit, NumPy, Plotly, Blender"
+              data-category="datos"
+            >
+              <p>
+                Muestra cómo la arteriosclerosis cambia el flujo sanguíneo en una arteria: parámetros
+                ajustables, métricas y gráficas interactivas en Streamlit, y exportación de un modelo 3D
+                para Blender.
+              </p>
+            </project-card>
+
+            <project-card
+              class="reveal"
+              name="ReciclajeApp"
+              kind="App Android"
+              repo="https://github.com/julian-up/App-Android"
+              stack="Java, Android, Gradle"
+              data-category="movil"
+            >
+              <p>
+                App de reciclaje con registro e inicio de sesión, recuperación de clave, categorización de
+                residuos, registro de lo reciclado, estadísticas y recompensas por puntos.
+              </p>
+            </project-card>
+
+            <project-card
+              class="reveal"
+              name="Imagen astronómica del día"
+              kind="Consumo de API · NASA"
+              repo="https://github.com/julian-up/API-de-la-NASA"
+              stack="JavaScript, Fetch, API REST, localStorage"
+              data-category="frontend"
+            >
+              <p>
+                Consume la API APOD de la NASA para mostrar la imagen o el video astronómico del día con su
+                explicación, consultar otras fechas y guardar favoritos en el navegador.
+              </p>
+            </project-card>
+
+            <project-card
+              class="reveal"
+              name="TrendyShop"
+              kind="Hackatón · Scrum Master"
+              repo="https://github.com/julian-up/Hackaton-Generation"
+              stack="HTML5, CSS3, JavaScript ES6, Módulos ES"
+              data-category="frontend"
+            >
+              <p>
+                Tienda de moda multipágina hecha en equipo durante un hackatón, en el que fui Scrum Master:
+                catálogo con filtros y detalle, carrito que se guarda en el navegador y formulario de
+                contacto, con módulos ES6 nativos y sin frameworks.
               </p>
             </project-card>
 
@@ -498,6 +588,44 @@ customElements.<span class="tk-f">define</span>(<span class="tk-s">'project-card
             >
               <p>Sitio web desarrollado y desplegado en Vercel, en producción.</p>
             </project-card>
+          </div>
+
+          <div class="vivero">
+            <h3 class="vivero-title reveal">En el vivero</h3>
+            <p class="section-lead reveal">
+              Lo que estoy sembrando ahora. Los publico aquí, con su código, en cuanto estén en línea.
+            </p>
+            <div class="projects-grid">
+              <project-card
+                class="reveal"
+                name="Sistema académico"
+                kind="Próximo proyecto"
+                badge="En desarrollo"
+                stack="Java, Spring Boot, PostgreSQL, Lit"
+                note="Alcance planeado."
+                data-category="fullstack"
+              >
+                <p>
+                  Plataforma para gestionar una institución educativa: matrículas, cursos, notas y asistencia,
+                  con roles de estudiante, docente y administración, y reportes por periodo.
+                </p>
+              </project-card>
+
+              <project-card
+                class="reveal"
+                name="Sistema farmacéutico"
+                kind="Próximo proyecto"
+                badge="En desarrollo"
+                stack="Java, Spring Boot, PostgreSQL, Lit"
+                note="Alcance planeado."
+                data-category="fullstack"
+              >
+                <p>
+                  Sistema para droguerías: inventario por lote y fecha de vencimiento, ventas y dispensación,
+                  alertas de stock bajo y de productos por vencer, y reportes de rotación.
+                </p>
+              </project-card>
+            </div>
           </div>
         </div>
       </section>

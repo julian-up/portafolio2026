@@ -831,6 +831,17 @@ intent-picker {
 project-card[featured] {
   grid-column: span 1;
 }
+/* Proyectos en desarrollo */
+.vivero {
+  margin-top: 4rem;
+}
+.vivero-title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
 /* Contenido que va dentro de <project-card> (light DOM) */
 project-card p {
   font-size: 0.88rem;
