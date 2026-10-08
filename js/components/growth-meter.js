@@ -25,7 +25,7 @@ export class GrowthMeter extends LitElement {
     }
     :host {
       position: fixed;
-      right: 1rem;
+      right: 5.5rem;
       bottom: 1rem;
       z-index: 50;
       width: 260px;

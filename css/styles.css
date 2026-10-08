@@ -426,6 +426,73 @@ intent-picker {
   gap: 0.8rem;
   margin-top: 2rem;
 }
+/* Botón flotante de WhatsApp: siempre a la mano */
+.wa-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 55;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #1da851;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transition: transform 0.25s var(--ease), background 0.25s;
+}
+.wa-fab:hover {
+  background: #25d366;
+  transform: translateY(-3px) scale(1.05);
+}
+.wa-fab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  opacity: 0;
+  animation: ping 2.8s ease-out 1.5s infinite;
+  pointer-events: none;
+}
+.wa-fab-label {
+  position: absolute;
+  right: calc(100% + 0.7rem);
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  background: rgba(6, 17, 14, 0.92);
+  border: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.wa-fab:hover .wa-fab-label,
+.wa-fab:focus-visible .wa-fab-label {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 720px) {
+  .wa-fab {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 54px;
+    height: 54px;
+  }
+  .wa-fab-label {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab::after {
+    animation: none;
+  }
+}
+
 .scroll-hint {
   position: absolute;
   left: 50%;
@@ -1232,7 +1299,12 @@ project-card:not(:defined) {
     padding: 0 1rem;
   }
   .hero-actions .btn {
-    flex: 1 1 100%;
+    flex: 1 1 calc(50% - 0.4rem);
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+  .hero-actions .btn-contact {
+    flex-basis: 100%;
   }
 }
 
