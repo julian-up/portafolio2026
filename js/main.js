@@ -6,6 +6,7 @@ import './components/project-card.js';
 import './components/site-preview.js';
 import './components/growth-meter.js';
 import './components/toast-host.js';
+import { initTarjetas } from './tarjetas.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (selector) => document.querySelector(selector);
@@ -282,6 +283,7 @@ function initInteractions() {
 ============================= */
 initNav();
 initReveal();
+initTarjetas({ reducedMotion });
 initScroll();
 initPointer();
 initInteractions();

@@ -494,14 +494,65 @@ intent-picker {
   border-color: var(--leaf);
 }
 
+/* La aparición usa `translate`; `transform` queda libre para la inclinación 3D */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.7s ease, transform 0.7s var(--ease);
+  translate: 0 26px;
+  transition: opacity 0.7s ease, translate 0.7s var(--ease);
 }
 .reveal.visible {
   opacity: 1;
-  transform: none;
+  translate: none;
+}
+
+/* =============================
+   TARJETAS 3D Y ARENA (js/tarjetas.js)
+============================= */
+.tarjeta-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+/* Vaivén suave mientras está en pantalla (empieza después de aparecer) */
+.tarjeta-3d.flotando {
+  animation: flotar 7s ease-in-out calc(0.9s + var(--retraso, 0s)) infinite;
+}
+@keyframes flotar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+.tarjeta-3d.sosteniendo {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.tarjeta-3d.temblando {
+  animation: temblor 0.09s linear infinite;
+}
+@keyframes temblor {
+  0%, 100% { translate: 0.7px 0; }
+  25% { translate: -0.7px 0.5px; }
+  50% { translate: 0.5px -0.6px; }
+  75% { translate: -0.5px -0.4px; }
+}
+/* Se borra de izquierda a derecha mientras el filtro la deshace en granos */
+.tarjeta-3d.arena {
+  filter: url(#arena);
+  -webkit-mask-image: linear-gradient(100deg, transparent calc(var(--arena, 0) * 140% - 40%), #000 calc(var(--arena, 0) * 140% - 5%));
+  mask-image: linear-gradient(100deg, transparent calc(var(--arena, 0) * 140% - 40%), #000 calc(var(--arena, 0) * 140% - 5%));
+}
+.lienzo-arena {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 45;
+  pointer-events: none;
+}
+.filtro-arena {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 /* =============================
@@ -591,7 +642,6 @@ intent-picker {
 }
 .evidence:hover {
   border-color: var(--border-strong);
-  transform: translateY(-3px);
 }
 .evidence-wide {
   grid-column: 1 / -1;
@@ -725,7 +775,6 @@ intent-picker {
 }
 .timeline-card:hover {
   border-color: var(--border-strong);
-  transform: translateX(4px);
 }
 .timeline-meta {
   display: flex;
@@ -1159,6 +1208,6 @@ project-card:not(:defined) {
   }
   .reveal {
     opacity: 1;
-    transform: none;
+    translate: none;
   }
 }

@@ -55,7 +55,6 @@ export class ProjectCard extends LitElement {
     }
     article:hover {
       border-color: var(--border-strong, rgba(110, 231, 168, 0.35));
-      transform: translateY(-4px);
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
     }
     :host([featured]) article {
